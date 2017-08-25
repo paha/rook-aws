@@ -1,0 +1,17 @@
+.*.swp
+*~
+.*#
+.vscode
+.DS_Store
+.Trashes
+.cache
+.notes
+.terraform
+terraform*
+/vendor
+glide.lock
+*.o
+*.a
+*.so
+_obj
+_test
