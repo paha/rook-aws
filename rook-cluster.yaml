@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: rook
+---
+apiVersion: rook.io/v1alpha1
+kind: Cluster
+metadata:
+  name: rook-eval
+  namespace: rook
+spec:
+  versionTag: v0.5.1
+  dataDirHostPath: "/var/lib/docker/rook-eval"
+  storage:
+    useAllNodes: true
+    useAllDevices: false
+    deviceFilter: nvm
+    metadataDevice:
+    location:
+    storeConfig:
+      storeType: bluestore
+      databaseSizeMB: 1024
+      journalSizeMB: 1024

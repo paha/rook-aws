@@ -23,12 +23,12 @@ variable "cluster_name" {
 
 variable "node_ami" {
   description = "AMI id to provision kube hosts."
-  default     = "ami-0b415472"                    # Ubuntu 16.04 LTS, instance store.
+  default = "ami-8803e0f0"
 }
 
 variable "node_instance_type" {
   description = "EC2 instance type for kube hosts."
-  default     = "c3.large"                          # vCPU - 2; mem - 3.75 GB; Store - 32 GB (2 * 16 GB SSD)
+  default     = "i3.2xlarge"
 }
 
 variable "node_count" {
