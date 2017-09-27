@@ -24,21 +24,15 @@ spec:
           mountPath: /eval-gp2
         - name: eval-ebs-io1
           mountPath: /eval-io1
-        - name: eval-ebs-st1
-          mountPath: /eval-st1
       volumes:
       - name: eval-block-storage
         persistentVolumeClaim:
           claimName: rookeval-claim
       - name: eval-ebs-gp2
         awsElasticBlockStore:
-          volumeID: vol-0f477bcfab93ca412
+          volumeID: vol-091b7b077a531edf5
           fsType: ext4
       - name: eval-ebs-io1
         awsElasticBlockStore:
-          volumeID: vol-02878afa65edfd54b
-          fsType: ext4
-      - name: eval-ebs-st1
-        awsElasticBlockStore:
-          volumeID: vol-09a4957cc52c7d904
+          volumeID: vol-032cea24b128f642a
           fsType: ext4

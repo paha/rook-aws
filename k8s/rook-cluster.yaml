@@ -9,8 +9,9 @@ metadata:
   name: rook-eval
   namespace: rook
 spec:
-  versionTag: v0.5.1
+  versionTag: master
   dataDirHostPath: "/var/lib/docker/rook-eval"
+  hostNetwork: false
   storage:
     useAllNodes: true
     useAllDevices: false

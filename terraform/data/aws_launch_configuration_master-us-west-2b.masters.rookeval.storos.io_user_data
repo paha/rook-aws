@@ -166,7 +166,7 @@ spec:
   storage:
     useAllNodes: true
     useAllDevices: false
-    deviceFilter: xvdc
+    deviceFilter: nvm
     metadataDevice:
     location:
     storeConfig:
@@ -244,9 +244,7 @@ wait_for_k8sapi
 sleep 5
 
 echo "Installing Kube Dashboard and heapster."
-/usr/local/bin/kubectl apply -f https://raw.githubusercontent.com/kubernetes/heapster/master/deploy/kube-config/rbac/heapster-rbac.yaml
-/usr/local/bin/kubectl create -f https://raw.githubusercontent.com/kubernetes/heapster/master/deploy/kube-config/influxdb/heapster.yaml
-/usr/local/bin/kubectl create -f https://rawgit.com/kubernetes/dashboard/master/src/deploy/kubernetes-dashboard.yaml
+/usr/local/bin/kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
 
 # install_prom
 # install_rook
