@@ -1,0 +1,109 @@
+# Rook vol vs. EBS gp2 vs. EBS io1 6k iops
+# 120 GiB ext4 with default mount options
+# Block sizes: 4k, 16k, 128k, 1024k
+# IO size 20 GiB
+
+# Example:
+# $ export TESTDIR=/eval && fio rookeval-filesystem.fio --output-format=json --output=results.json
+
+[global]
+ioengine=libaio
+iodepth=4
+direct=1
+runtime=60
+invalidate=1
+size=20g
+directory=${TESTDIR}
+filename=fio-test.file
+
+###
+#     block size 4k
+#
+[seq-read-4k]
+bs=4k
+rw=read
+stonewall
+
+[rand-read-4k]
+bs=4k
+rw=randread
+stonewall
+
+[seq-write-4k]
+bs=4k
+rw=write
+stonewall
+
+[rand-write-4k]
+bs=4k
+rw=randwrite
+stonewall
+
+###
+#     block size 16k
+#
+[seq-read-16k]
+bs=16k
+rw=read
+stonewall
+
+[rand-read-16k]
+bs=16k
+rw=randread
+stonewall
+
+[seq-write-16k]
+bs=16k
+rw=write
+stonewall
+
+[rand-write-16k]
+bs=16k
+rw=randwrite
+stonewall
+
+###
+#     block size 128k
+#
+[seq-read-128k]
+bs=128k
+rw=read
+stonewall
+
+[rand-read-128k]
+bs=128k
+rw=randread
+stonewall
+
+[seq-write-128k]
+bs=128k
+rw=write
+stonewall
+
+[rand-write-128k]
+bs=128k
+rw=randwrite
+stonewall
+
+###
+#     block size 1024k
+#
+[seq-read-1024k]
+bs=1024k
+rw=read
+stonewall
+
+[rand-read-1024k]
+bs=1024k
+rw=randread
+stonewall
+
+[seq-write-1024k]
+bs=1024k
+rw=write
+stonewall
+
+[rand-write-1024k]
+bs=1024k
+rw=randwrite
+stonewall

@@ -34,5 +34,5 @@ spec:
           fsType: ext4
       - name: eval-ebs-io1
         awsElasticBlockStore:
-          volumeID: vol-032cea24b128f642a
+          volumeID: vol-0b8645275e38e2b14
           fsType: ext4
