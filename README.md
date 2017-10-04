@@ -131,7 +131,15 @@ overlay        overlay  7.7G  2.8G  5.0G  36% /
 
 All looks good, ready to finally proceed with [FIO][8] tests. Our test pod currently has 3 different storage types to compare. It would be interesting to add rook clusters backed by EBSs of different types, and try different instance types as they provide different controllers and drives. Next time perhaps.
 
-## 4. Rook Object store
+---
+
+### Notes:
+
+* I am not sure why sequential reads and writes went slower than random ones for Rook, though still higher than expensive EBS io1 with 6K provisioned IOPs. I might look at it later, random read/writes are the important ones for transactional IO, so I’m focusing on that for now. I might look at Streaming IO with HDD based devices at some point to compare sequential read/write performance.
+
+* The testing pod is running on the node that is also a Rook cluster node. I did try testing with a pod on a non-Rook node to avoid any local IO, however with Ceph being consistent an IO operation is complete only after all replicas are written, so it makes no noticeable difference where the pod lands on you cluster, at least in my testing setup where network capacity is the same across all nodes.
+
+---
 
 [1]: https://kubernetes.io
 [2]: https://rook.io
