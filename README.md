@@ -1,24 +1,38 @@
 # Rook as an alternative to EBS in AWS
 
-To evaluate storage options we’ll setup a [Kubernetes][1] cluster in AWS with a rook cluster deployed along with tools for debugging and metrics collection. Then we’ll deploy a pod with 4 different volumes to compare [Rook][2] block storage (backed by instance store), EBS gp2, and EBS io1 (SSD) (re: [EBS volume types][3]).
+To evaluate storage options we’ll setup a [Kubernetes][1] cluster in AWS with a rook cluster deployed along with tools for debugging and metrics collection. Then we’ll deploy a pod with 3 different volumes to compare [Rook][2] block storage (backed by instance store), EBS gp2, and EBS io1 (SSD) (re: [EBS volume types][3]).
 
 ## 1. Kubernetes cluster setup
 
-[Kubernetes kops][4] was used to generate an initial [Terraform][5] project and modified for our test case to bypass kops limitations. Terraform provisions AWS resources to host Kubernetes cluster, including VPC, network topology, policies, security groups and ASGs for nodes and master. `Nodeup` from Kops is used to bootstrap Kubernetes cluster.
+[Kubernetes kops][4] was used to setup Kubernets cluster in AWS.
 
 For this test Kubernetes nodes are a mid range `i3.2xlarge`, with instance storage (1900 GiB NVMe SSD) and Up to 10 Gigabit networking performance. Kubernetes is installed on Ubuntu 16.04 LTS with 3 nodes plus the master.
 
-Once the terraform run is complete, we should have a fully functioning Kubernetes cluster. To manage the cluster ssh to the master, or copy the config from there.
+Upon finishing the `kops` create, we should have fully functioning Kubernetes cluster, kops even sets up context for the newlly created cluster in kube config.
 
 ```bash
-$ terraform apply
+$ brew install kops
+$ kops create cluster $NAME \
+  --node-count 3 \
+  --zones "us-west-2c" \
+  --node-size "i3.2xlarge" \
+  --master-size "m3.medium" \
+  --master-zones "us-west-2c" \
+  --admin-access x.x.x.x/32 \
+  --api-loadbalancer-type public \
+  --cloud aws \
+  --image "ami-2606e05e" \
+  --kubernetes-version 1.8.2 \
+  --ssh-access x.x.x.x/32 \
+  --ssh-public-key ~/.ssh/me.pub \
+  --yes
 ...
 $ kubectl get nodes
 NAME                                          STATUS    AGE       VERSION
-ip-172-20-42-159.us-west-2.compute.internal   Ready     1m        v1.7.0
-ip-172-20-42-37.us-west-2.compute.internal    Ready     2m        v1.7.0
-ip-172-20-53-26.us-west-2.compute.internal    Ready     1m        v1.7.0
-ip-172-20-55-209.us-west-2.compute.internal   Ready     1m        v1.7.0
+ip-172-20-42-159.us-west-2.compute.internal   Ready     1m        v1.8.2
+ip-172-20-42-37.us-west-2.compute.internal    Ready     2m        v1.8.2
+ip-172-20-53-26.us-west-2.compute.internal    Ready     1m        v1.8.2
+ip-172-20-55-209.us-west-2.compute.internal   Ready     1m        v1.8.2
 ```
 
 ## 2. Rook cluster deployment
