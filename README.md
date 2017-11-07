@@ -1,6 +1,6 @@
 # Rook as an alternative to EBS in AWS
 
-To evaluate storage options we’ll setup a [Kubernetes][1] cluster in AWS with a rook cluster deployed along with tools for debugging and metrics collection. Then we’ll deploy a pod with 4 different volumes to compare [Rook][2] block storage (backed by instance store), EBS gp2, EBS io1 (SSD) and EBS st1 (HDD) (re: [EBS volume types][3]). Finally, Rook Object Store is provisioned to compare to s3.
+To evaluate storage options we’ll setup a [Kubernetes][1] cluster in AWS with a rook cluster deployed along with tools for debugging and metrics collection. Then we’ll deploy a pod with 4 different volumes to compare [Rook][2] block storage (backed by instance store), EBS gp2, and EBS io1 (SSD) (re: [EBS volume types][3]).
 
 ## 1. Kubernetes cluster setup
 
@@ -23,7 +23,7 @@ ip-172-20-55-209.us-west-2.compute.internal   Ready     1m        v1.7.0
 
 ## 2. Rook cluster deployment
 
-Rook is easy to get running, we’ll run the latest release, 0.5 currently. It’ll manage [Ceph][6] cluster configured to our spec. First, _rook-operator_ needs to be deployed:
+Rook is easy to get running, we’ll run the latest release, 0.6 currently. It’ll manage [Ceph][6] cluster configured to our spec. First, _rook-operator_ needs to be deployed:
 
 ```bash
 $ kubectl create -f k8s/rook-operator.yaml
@@ -33,12 +33,11 @@ clusterrolebinding "rook-operator" created
 deployment "rook-operator" created
 ```
 
-&nbsp; :warning: &nbsp; Note, all nodes used by Rook cluster required to have Ceph tools installed, this requirement will be removed with the beta rook release, v.0.6. In this case, ceph tools were installed during terraform deployment by installing `ceph-fs-common` and `ceph-common` _Ubuntu_ packages through [instance user-data][7].
-
 The Rook cluster is configured to deliver block storage using local disks (instance store) attached directly to hosts running our instances. The disk devices are selected by `deviceFilter`, instance store is `/dev/nvme0n1`
 
 Once the rook cluster is created, you will notice that rook-operator created several pods in the rook namespace to manage ceph components:
 
+The placement for the osd is set in the cluster.yaml such that only two nodes are used for storage. The third node will host the test client pod.
 ```bash
 $ kubectl create -f k8s/rook-cluster.yaml
 namespace "rook" created
@@ -47,12 +46,12 @@ $ kubectl get pods --namespace rook
 NAME                              READY     STATUS    RESTARTS   AGE
 rook-api-3588729152-s0dxw         1/1       Running   0          46s
 rook-ceph-mgr0-1957545771-bsg7h   1/1       Running   0          46s
+rook-ceph-mgr1-1957545771-cth8i   1/1       Running   0          47s
 rook-ceph-mon0-t1m3z              1/1       Running   0          1m
 rook-ceph-mon1-mkdl4              1/1       Running   0          1m
 rook-ceph-mon2-bv1qk              1/1       Running   0          1m
 rook-ceph-osd-0027l               1/1       Running   0          46s
 rook-ceph-osd-2p90r               1/1       Running   0          46s
-rook-ceph-osd-d8j0j               1/1       Running   0          46s
 ```
 
 Rook storage Pool and StorageClass have to be defined next. Note, that we are creating 2 replicas to provide resiliency on par with EBS:
@@ -63,7 +62,7 @@ pool "replicapool" created
 storageclass "rook-block" created
 ```
 
-I also installed rook toolbox to provide better visibility into the Rook cluster and to create Rook object store with `rookctl` CLI.
+The Rook toolbox was started to provide better visibility into the Rook cluster. 
 
 ```bash
 $ kubectl create -f k8s/rook-tools.yaml
@@ -84,10 +83,11 @@ rook-ceph-mon2   100.68.185.191:6790/0   true        OK
 MGRs:
 NAME             STATUS
 rook-ceph-mgr0   Active
+rook-ceph-mgr0   Standby
 
 OSDs:
 TOTAL     UP        IN        FULL      NEAR FULL
-3         3         3         false     false
+2         2         2         false     false
 
 PLACEMENT GROUPS (100 total):
 STATE          COUNT
@@ -110,8 +110,10 @@ $ aws ec2 create-volume --availability-zone=us-west-2b --size=120 --volume-type=
 Let’s create a pod with 3 volumes to run our FIO tests against:
 
 1. Rook volume mounted to `/eval`. 120 GiB, `ext4`.
-1. EBS gp2 (General purpose) volume mounted to `/eval-gp2`. 120 GiB, `ext4`.
 1. EBS io1 (Provisioned IOPS = 6K) volume mounted to `/eval-io1`. 120 GiB `ext4`.
+1. EBS gp2 (General purpose) volume mounted to `/eval-gp2`. 120 GiB, `ext4`.
+
+Note that the blog writeup focused on the performance of the `io1` volume for a high performance IOPS scenario.
 
 ```bash
 $ kubectl create -f k8s/test-deployment.yaml
@@ -129,15 +131,17 @@ overlay        overlay  7.7G  2.8G  5.0G  36% /
 /dev/xvda1     ext4     7.7G  2.8G  5.0G  36% /etc/hosts
 ```
 
-All looks good, ready to finally proceed with [FIO][8] tests. Our test pod currently has 3 different storage types to compare. It would be interesting to add rook clusters backed by EBSs of different types, and try different instance types as they provide different controllers and drives. Next time perhaps.
+All looks good, ready to finally proceed with [FIO][7] tests. Our test pod currently has 3 different storage types to compare. It would be interesting to add rook clusters backed by EBSs of different types, and try different instance types as they provide different controllers and drives. Next time perhaps.
 
 ---
 
 ### Notes:
 
-* I am not sure why sequential reads and writes went slower than random ones for Rook, though still higher than expensive EBS io1 with 6K provisioned IOPs. I might look at it later, random read/writes are the important ones for transactional IO, so I’m focusing on that for now. I might look at Streaming IO with HDD based devices at some point to compare sequential read/write performance.
+* Rook had higher IOPS in all scenarios except 4K sequential writes. Random writes are the important ones for transactional IO, so I’m focusing on that for now. 
 
-* The testing pod is running on the node that is also a Rook cluster node. I did try testing with a pod on a non-Rook node to avoid any local IO, however with Ceph being consistent an IO operation is complete only after all replicas are written, so it makes no noticeable difference where the pod lands on you cluster, at least in my testing setup where network capacity is the same across all nodes.
+* Need to analyze streaming IO with HDD based devices at some point to compare sequential read/write performance.
+
+* For the reported results, the testing pod is running on a node different than the storage nodes. For comparison, the test pod was also run on the storage nodes for a hyper-converged scenario. With Ceph being consistent an IO operation is complete only after all replicas are written, so it makes no noticeable difference where the pod lands on you cluster, at least in my testing setup where network capacity is the same across all nodes.
 
 ---
 
@@ -147,5 +151,4 @@ All looks good, ready to finally proceed with [FIO][8] tests. Our test pod curre
 [4]: https://github.com/kubernetes/kops
 [5]: https://www.terraform.io
 [6]: http://ceph.com
-[7]: https://github.com/paha/rook-aws/blob/master/terraform/data/aws_launch_configuration_nodes.rookeval.storos.io_user_data#L148
-[8]: https://github.com/axboe/fio
+[7]: https://github.com/axboe/fio
