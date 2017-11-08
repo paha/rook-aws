@@ -1,0 +1,1643 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T17:01:13Z
+  involvedObject:
+    apiVersion: v1
+    kind: Pod
+    name: ebs-only-client-7b49876fb5-b7n4d
+    namespace: default
+    resourceVersion: "586278"
+    uid: 6d27f0b6-c4a6-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T17:01:13Z
+  message: Successfully assigned ebs-only-client-7b49876fb5-b7n4d to ip-172-20-51-182.us-west-2.compute.internal
+  metadata:
+    creationTimestamp: 2017-11-08T17:01:13Z
+    name: ebs-only-client-7b49876fb5-b7n4d.14f52af308f5f40c
+    namespace: default
+    resourceVersion: "2917"
+    selfLink: /api/v1/namespaces/default/events/ebs-only-client-7b49876fb5-b7n4d.14f52af308f5f40c
+    uid: 6d33e742-c4a6-11e7-b096-0a570863b3d2
+  reason: Scheduled
+  source:
+    component: default-scheduler
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T17:01:13Z
+  involvedObject:
+    apiVersion: v1
+    kind: Pod
+    name: ebs-only-client-7b49876fb5-b7n4d
+    namespace: default
+    resourceVersion: "586281"
+    uid: 6d27f0b6-c4a6-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T17:01:13Z
+  message: 'MountVolume.SetUp succeeded for volume "default-token-thxk7" '
+  metadata:
+    creationTimestamp: 2017-11-08T17:01:13Z
+    name: ebs-only-client-7b49876fb5-b7n4d.14f52af319e948ce
+    namespace: default
+    resourceVersion: "2919"
+    selfLink: /api/v1/namespaces/default/events/ebs-only-client-7b49876fb5-b7n4d.14f52af319e948ce
+    uid: 6d5d0ade-c4a6-11e7-b096-0a570863b3d2
+  reason: SuccessfulMountVolume
+  source:
+    component: kubelet
+    host: ip-172-20-51-182.us-west-2.compute.internal
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T17:01:20Z
+  involvedObject:
+    apiVersion: v1
+    kind: Pod
+    name: ebs-only-client-7b49876fb5-b7n4d
+    namespace: default
+    resourceVersion: "586281"
+    uid: 6d27f0b6-c4a6-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T17:01:20Z
+  message: 'AttachVolume.Attach failed for volume "eval-ebs-io1" : Error attaching
+    EBS volume "vol-037b665e14ab0d110" to instance "i-0d5acd04e0ccb548f": "VolumeInUse:
+    vol-037b665e14ab0d110 is already attached to an instance\n\tstatus code: 400,
+    request id: 1be9b37c-0c14-47e9-acaf-fc0cda98092b". The volume is currently attached
+    to instance "i-0e8ac361246ae85cf"'
+  metadata:
+    creationTimestamp: 2017-11-08T17:01:20Z
+    name: ebs-only-client-7b49876fb5-b7n4d.14f52af4988d5887
+    namespace: default
+    resourceVersion: "2925"
+    selfLink: /api/v1/namespaces/default/events/ebs-only-client-7b49876fb5-b7n4d.14f52af4988d5887
+    uid: 713119e7-c4a6-11e7-b096-0a570863b3d2
+  reason: FailedMount
+  source:
+    component: attachdetach
+  type: Warning
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T17:01:36Z
+  involvedObject:
+    apiVersion: v1
+    kind: Pod
+    name: ebs-only-client-7b49876fb5-b7n4d
+    namespace: default
+    resourceVersion: "586281"
+    uid: 6d27f0b6-c4a6-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T17:01:36Z
+  message: 'AttachVolume.Attach failed for volume "eval-ebs-io1" : Error attaching
+    EBS volume "vol-037b665e14ab0d110" to instance "i-0d5acd04e0ccb548f": "VolumeInUse:
+    vol-037b665e14ab0d110 is already attached to an instance\n\tstatus code: 400,
+    request id: 76d74f5c-3255-498d-ac57-39f987e6c66a". The volume is currently attached
+    to instance "i-0e8ac361246ae85cf"'
+  metadata:
+    creationTimestamp: 2017-11-08T17:01:36Z
+    name: ebs-only-client-7b49876fb5-b7n4d.14f52af868c963f9
+    namespace: default
+    resourceVersion: "2926"
+    selfLink: /api/v1/namespaces/default/events/ebs-only-client-7b49876fb5-b7n4d.14f52af868c963f9
+    uid: 7af4402b-c4a6-11e7-b096-0a570863b3d2
+  reason: FailedMount
+  source:
+    component: attachdetach
+  type: Warning
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T17:02:08Z
+  involvedObject:
+    apiVersion: v1
+    kind: Pod
+    name: ebs-only-client-7b49876fb5-b7n4d
+    namespace: default
+    resourceVersion: "586281"
+    uid: 6d27f0b6-c4a6-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T17:02:08Z
+  message: 'AttachVolume.Attach failed for volume "eval-ebs-io1" : Error attaching
+    EBS volume "vol-037b665e14ab0d110" to instance "i-0d5acd04e0ccb548f": "VolumeInUse:
+    vol-037b665e14ab0d110 is already attached to an instance\n\tstatus code: 400,
+    request id: 574e388c-93c6-4bb3-bdad-9cdd680a846a". The volume is currently attached
+    to instance "i-0e8ac361246ae85cf"'
+  metadata:
+    creationTimestamp: 2017-11-08T17:02:08Z
+    name: ebs-only-client-7b49876fb5-b7n4d.14f52affefd6d021
+    namespace: default
+    resourceVersion: "2927"
+    selfLink: /api/v1/namespaces/default/events/ebs-only-client-7b49876fb5-b7n4d.14f52affefd6d021
+    uid: 8e398a19-c4a6-11e7-b096-0a570863b3d2
+  reason: FailedMount
+  source:
+    component: attachdetach
+  type: Warning
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T17:03:16Z
+  involvedObject:
+    apiVersion: v1
+    kind: Pod
+    name: ebs-only-client-7b49876fb5-b7n4d
+    namespace: default
+    resourceVersion: "586281"
+    uid: 6d27f0b6-c4a6-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T17:03:16Z
+  message: 'Unable to mount volumes for pod "ebs-only-client-7b49876fb5-b7n4d_default(6d27f0b6-c4a6-11e7-b096-0a570863b3d2)":
+    timeout expired waiting for volumes to attach/mount for pod "default"/"ebs-only-client-7b49876fb5-b7n4d".
+    list of unattached/unmounted volumes=[eval-ebs-io1]'
+  metadata:
+    creationTimestamp: 2017-11-08T17:03:16Z
+    name: ebs-only-client-7b49876fb5-b7n4d.14f52b0facb2344a
+    namespace: default
+    resourceVersion: "2929"
+    selfLink: /api/v1/namespaces/default/events/ebs-only-client-7b49876fb5-b7n4d.14f52b0facb2344a
+    uid: b6835b02-c4a6-11e7-b096-0a570863b3d2
+  reason: FailedMount
+  source:
+    component: kubelet
+    host: ip-172-20-51-182.us-west-2.compute.internal
+  type: Warning
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T17:03:16Z
+  involvedObject:
+    apiVersion: v1
+    kind: Pod
+    name: ebs-only-client-7b49876fb5-b7n4d
+    namespace: default
+    resourceVersion: "586281"
+    uid: 6d27f0b6-c4a6-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T17:03:16Z
+  message: Error syncing pod
+  metadata:
+    creationTimestamp: 2017-11-08T17:03:16Z
+    name: ebs-only-client-7b49876fb5-b7n4d.14f52b0facb389b9
+    namespace: default
+    resourceVersion: "2928"
+    selfLink: /api/v1/namespaces/default/events/ebs-only-client-7b49876fb5-b7n4d.14f52b0facb389b9
+    uid: b682f48d-c4a6-11e7-b096-0a570863b3d2
+  reason: FailedSync
+  source:
+    component: kubelet
+    host: ip-172-20-51-182.us-west-2.compute.internal
+  type: Warning
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T17:05:24Z
+  involvedObject:
+    apiVersion: v1
+    kind: Pod
+    name: ebs-only-client-7b49876fb5-b7n4d
+    namespace: default
+    resourceVersion: "586281"
+    uid: 6d27f0b6-c4a6-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T17:05:24Z
+  message: 'MountVolume.SetUp succeeded for volume "eval-ebs-io1" '
+  metadata:
+    creationTimestamp: 2017-11-08T17:05:24Z
+    name: ebs-only-client-7b49876fb5-b7n4d.14f52b2d7ddf385f
+    namespace: default
+    resourceVersion: "2930"
+    selfLink: /api/v1/namespaces/default/events/ebs-only-client-7b49876fb5-b7n4d.14f52b2d7ddf385f
+    uid: 02d7dc11-c4a7-11e7-b096-0a570863b3d2
+  reason: SuccessfulMountVolume
+  source:
+    component: kubelet
+    host: ip-172-20-51-182.us-west-2.compute.internal
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T17:05:24Z
+  involvedObject:
+    apiVersion: v1
+    fieldPath: spec.containers{rookeval}
+    kind: Pod
+    name: ebs-only-client-7b49876fb5-b7n4d
+    namespace: default
+    resourceVersion: "586281"
+    uid: 6d27f0b6-c4a6-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T17:05:24Z
+  message: pulling image "ubuntu"
+  metadata:
+    creationTimestamp: 2017-11-08T17:05:24Z
+    name: ebs-only-client-7b49876fb5-b7n4d.14f52b2d97fb1775
+    namespace: default
+    resourceVersion: "2931"
+    selfLink: /api/v1/namespaces/default/events/ebs-only-client-7b49876fb5-b7n4d.14f52b2d97fb1775
+    uid: 031bee06-c4a7-11e7-b096-0a570863b3d2
+  reason: Pulling
+  source:
+    component: kubelet
+    host: ip-172-20-51-182.us-west-2.compute.internal
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T17:05:26Z
+  involvedObject:
+    apiVersion: v1
+    fieldPath: spec.containers{rookeval}
+    kind: Pod
+    name: ebs-only-client-7b49876fb5-b7n4d
+    namespace: default
+    resourceVersion: "586281"
+    uid: 6d27f0b6-c4a6-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T17:05:26Z
+  message: Successfully pulled image "ubuntu"
+  metadata:
+    creationTimestamp: 2017-11-08T17:05:26Z
+    name: ebs-only-client-7b49876fb5-b7n4d.14f52b2deadfebf5
+    namespace: default
+    resourceVersion: "2932"
+    selfLink: /api/v1/namespaces/default/events/ebs-only-client-7b49876fb5-b7n4d.14f52b2deadfebf5
+    uid: 03eeeb3d-c4a7-11e7-b096-0a570863b3d2
+  reason: Pulled
+  source:
+    component: kubelet
+    host: ip-172-20-51-182.us-west-2.compute.internal
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T17:05:26Z
+  involvedObject:
+    apiVersion: v1
+    fieldPath: spec.containers{rookeval}
+    kind: Pod
+    name: ebs-only-client-7b49876fb5-b7n4d
+    namespace: default
+    resourceVersion: "586281"
+    uid: 6d27f0b6-c4a6-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T17:05:26Z
+  message: Created container
+  metadata:
+    creationTimestamp: 2017-11-08T17:05:26Z
+    name: ebs-only-client-7b49876fb5-b7n4d.14f52b2dedbee0ef
+    namespace: default
+    resourceVersion: "2933"
+    selfLink: /api/v1/namespaces/default/events/ebs-only-client-7b49876fb5-b7n4d.14f52b2dedbee0ef
+    uid: 03f641bf-c4a7-11e7-b096-0a570863b3d2
+  reason: Created
+  source:
+    component: kubelet
+    host: ip-172-20-51-182.us-west-2.compute.internal
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T17:05:26Z
+  involvedObject:
+    apiVersion: v1
+    fieldPath: spec.containers{rookeval}
+    kind: Pod
+    name: ebs-only-client-7b49876fb5-b7n4d
+    namespace: default
+    resourceVersion: "586281"
+    uid: 6d27f0b6-c4a6-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T17:05:26Z
+  message: Started container
+  metadata:
+    creationTimestamp: 2017-11-08T17:05:26Z
+    name: ebs-only-client-7b49876fb5-b7n4d.14f52b2df326a11b
+    namespace: default
+    resourceVersion: "2934"
+    selfLink: /api/v1/namespaces/default/events/ebs-only-client-7b49876fb5-b7n4d.14f52b2df326a11b
+    uid: 04041a8e-c4a7-11e7-b096-0a570863b3d2
+  reason: Started
+  source:
+    component: kubelet
+    host: ip-172-20-51-182.us-west-2.compute.internal
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T16:45:14Z
+  involvedObject:
+    apiVersion: v1
+    fieldPath: spec.containers{rookeval}
+    kind: Pod
+    name: ebs-only-client-7b49876fb5-drmwc
+    namespace: default
+    resourceVersion: "517704"
+    uid: f886a722-c433-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T16:45:14Z
+  message: Killing container with id docker://rookeval:Need to kill Pod
+  metadata:
+    creationTimestamp: 2017-11-08T16:45:14Z
+    name: ebs-only-client-7b49876fb5-drmwc.14f52a13d6be56ac
+    namespace: default
+    resourceVersion: "2866"
+    selfLink: /api/v1/namespaces/default/events/ebs-only-client-7b49876fb5-drmwc.14f52a13d6be56ac
+    uid: 31cffa57-c4a4-11e7-b096-0a570863b3d2
+  reason: Killing
+  source:
+    component: kubelet
+    host: ip-172-20-37-153.us-west-2.compute.internal
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T16:48:37Z
+  involvedObject:
+    apiVersion: v1
+    kind: Pod
+    name: ebs-only-client-7b49876fb5-mfkzb
+    namespace: default
+    resourceVersion: "585175"
+    uid: aad2af4a-c4a4-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T16:48:37Z
+  message: Successfully assigned ebs-only-client-7b49876fb5-mfkzb to ip-172-20-61-205.us-west-2.compute.internal
+  metadata:
+    creationTimestamp: 2017-11-08T16:48:37Z
+    name: ebs-only-client-7b49876fb5-mfkzb.14f52a431f007ee6
+    namespace: default
+    resourceVersion: "2870"
+    selfLink: /api/v1/namespaces/default/events/ebs-only-client-7b49876fb5-mfkzb.14f52a431f007ee6
+    uid: aadb60f3-c4a4-11e7-b096-0a570863b3d2
+  reason: Scheduled
+  source:
+    component: default-scheduler
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T16:48:38Z
+  involvedObject:
+    apiVersion: v1
+    kind: Pod
+    name: ebs-only-client-7b49876fb5-mfkzb
+    namespace: default
+    resourceVersion: "585178"
+    uid: aad2af4a-c4a4-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T16:48:38Z
+  message: 'MountVolume.SetUp succeeded for volume "default-token-thxk7" '
+  metadata:
+    creationTimestamp: 2017-11-08T16:48:38Z
+    name: ebs-only-client-7b49876fb5-mfkzb.14f52a432e7bef01
+    namespace: default
+    resourceVersion: "2871"
+    selfLink: /api/v1/namespaces/default/events/ebs-only-client-7b49876fb5-mfkzb.14f52a432e7bef01
+    uid: ab01bc32-c4a4-11e7-b096-0a570863b3d2
+  reason: SuccessfulMountVolume
+  source:
+    component: kubelet
+    host: ip-172-20-61-205.us-west-2.compute.internal
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T16:48:54Z
+  involvedObject:
+    apiVersion: v1
+    kind: Pod
+    name: ebs-only-client-7b49876fb5-mfkzb
+    namespace: default
+    resourceVersion: "585178"
+    uid: aad2af4a-c4a4-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T16:48:54Z
+  message: 'MountVolume.SetUp succeeded for volume "eval-ebs-io1" '
+  metadata:
+    creationTimestamp: 2017-11-08T16:48:54Z
+    name: ebs-only-client-7b49876fb5-mfkzb.14f52a470ad7b3e2
+    namespace: default
+    resourceVersion: "2881"
+    selfLink: /api/v1/namespaces/default/events/ebs-only-client-7b49876fb5-mfkzb.14f52a470ad7b3e2
+    uid: b4e3fd73-c4a4-11e7-b096-0a570863b3d2
+  reason: SuccessfulMountVolume
+  source:
+    component: kubelet
+    host: ip-172-20-61-205.us-west-2.compute.internal
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T16:48:55Z
+  involvedObject:
+    apiVersion: v1
+    fieldPath: spec.containers{rookeval}
+    kind: Pod
+    name: ebs-only-client-7b49876fb5-mfkzb
+    namespace: default
+    resourceVersion: "585178"
+    uid: aad2af4a-c4a4-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T16:48:55Z
+  message: pulling image "ubuntu"
+  metadata:
+    creationTimestamp: 2017-11-08T16:48:55Z
+    name: ebs-only-client-7b49876fb5-mfkzb.14f52a4725489015
+    namespace: default
+    resourceVersion: "2882"
+    selfLink: /api/v1/namespaces/default/events/ebs-only-client-7b49876fb5-mfkzb.14f52a4725489015
+    uid: b527b117-c4a4-11e7-b096-0a570863b3d2
+  reason: Pulling
+  source:
+    component: kubelet
+    host: ip-172-20-61-205.us-west-2.compute.internal
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T16:48:56Z
+  involvedObject:
+    apiVersion: v1
+    fieldPath: spec.containers{rookeval}
+    kind: Pod
+    name: ebs-only-client-7b49876fb5-mfkzb
+    namespace: default
+    resourceVersion: "585178"
+    uid: aad2af4a-c4a4-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T16:48:56Z
+  message: Successfully pulled image "ubuntu"
+  metadata:
+    creationTimestamp: 2017-11-08T16:48:56Z
+    name: ebs-only-client-7b49876fb5-mfkzb.14f52a4779e36697
+    namespace: default
+    resourceVersion: "2883"
+    selfLink: /api/v1/namespaces/default/events/ebs-only-client-7b49876fb5-mfkzb.14f52a4779e36697
+    uid: b600443e-c4a4-11e7-b096-0a570863b3d2
+  reason: Pulled
+  source:
+    component: kubelet
+    host: ip-172-20-61-205.us-west-2.compute.internal
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T16:48:56Z
+  involvedObject:
+    apiVersion: v1
+    fieldPath: spec.containers{rookeval}
+    kind: Pod
+    name: ebs-only-client-7b49876fb5-mfkzb
+    namespace: default
+    resourceVersion: "585178"
+    uid: aad2af4a-c4a4-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T16:48:56Z
+  message: Created container
+  metadata:
+    creationTimestamp: 2017-11-08T16:48:56Z
+    name: ebs-only-client-7b49876fb5-mfkzb.14f52a477c744933
+    namespace: default
+    resourceVersion: "2884"
+    selfLink: /api/v1/namespaces/default/events/ebs-only-client-7b49876fb5-mfkzb.14f52a477c744933
+    uid: b606c708-c4a4-11e7-b096-0a570863b3d2
+  reason: Created
+  source:
+    component: kubelet
+    host: ip-172-20-61-205.us-west-2.compute.internal
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T16:48:56Z
+  involvedObject:
+    apiVersion: v1
+    fieldPath: spec.containers{rookeval}
+    kind: Pod
+    name: ebs-only-client-7b49876fb5-mfkzb
+    namespace: default
+    resourceVersion: "585178"
+    uid: aad2af4a-c4a4-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T16:48:56Z
+  message: Started container
+  metadata:
+    creationTimestamp: 2017-11-08T16:48:56Z
+    name: ebs-only-client-7b49876fb5-mfkzb.14f52a478104647e
+    namespace: default
+    resourceVersion: "2885"
+    selfLink: /api/v1/namespaces/default/events/ebs-only-client-7b49876fb5-mfkzb.14f52a478104647e
+    uid: b6127b75-c4a4-11e7-b096-0a570863b3d2
+  reason: Started
+  source:
+    component: kubelet
+    host: ip-172-20-61-205.us-west-2.compute.internal
+  type: Normal
+- apiVersion: v1
+  count: 5
+  firstTimestamp: 2017-11-08T17:01:03Z
+  involvedObject:
+    apiVersion: v1
+    kind: Pod
+    name: ebs-only-client-7b49876fb5-mfkzb
+    namespace: default
+    resourceVersion: "585178"
+    uid: aad2af4a-c4a4-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T17:01:11Z
+  message: 'AttachVolume.Attach failed for volume "eval-ebs-io1" : error finding instance
+    ip-172-20-61-205.us-west-2.compute.internal: "instance not found"'
+  metadata:
+    creationTimestamp: 2017-11-08T17:01:03Z
+    name: ebs-only-client-7b49876fb5-mfkzb.14f52af0d03dba8d
+    namespace: default
+    resourceVersion: "2913"
+    selfLink: /api/v1/namespaces/default/events/ebs-only-client-7b49876fb5-mfkzb.14f52af0d03dba8d
+    uid: 67824330-c4a6-11e7-b096-0a570863b3d2
+  reason: FailedMount
+  source:
+    component: attachdetach
+  type: Warning
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T16:44:44Z
+  involvedObject:
+    apiVersion: extensions
+    kind: ReplicaSet
+    name: ebs-only-client-7b49876fb5
+    namespace: default
+    resourceVersion: "584819"
+    uid: c9c32671-c432-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T16:44:44Z
+  message: 'Deleted pod: ebs-only-client-7b49876fb5-drmwc'
+  metadata:
+    creationTimestamp: 2017-11-08T16:44:44Z
+    name: ebs-only-client-7b49876fb5.14f52a0cd654e562
+    namespace: default
+    resourceVersion: "2863"
+    selfLink: /api/v1/namespaces/default/events/ebs-only-client-7b49876fb5.14f52a0cd654e562
+    uid: 1fe537da-c4a4-11e7-b096-0a570863b3d2
+  reason: SuccessfulDelete
+  source:
+    component: replicaset-controller
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T16:48:37Z
+  involvedObject:
+    apiVersion: extensions
+    kind: ReplicaSet
+    name: ebs-only-client-7b49876fb5
+    namespace: default
+    resourceVersion: "585173"
+    uid: aacf116e-c4a4-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T16:48:37Z
+  message: 'Created pod: ebs-only-client-7b49876fb5-mfkzb'
+  metadata:
+    creationTimestamp: 2017-11-08T16:48:37Z
+    name: ebs-only-client-7b49876fb5.14f52a431ca2273e
+    namespace: default
+    resourceVersion: "2869"
+    selfLink: /api/v1/namespaces/default/events/ebs-only-client-7b49876fb5.14f52a431ca2273e
+    uid: aad52bc3-c4a4-11e7-b096-0a570863b3d2
+  reason: SuccessfulCreate
+  source:
+    component: replicaset-controller
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T17:01:13Z
+  involvedObject:
+    apiVersion: extensions
+    kind: ReplicaSet
+    name: ebs-only-client-7b49876fb5
+    namespace: default
+    resourceVersion: "586232"
+    uid: aacf116e-c4a4-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T17:01:13Z
+  message: 'Created pod: ebs-only-client-7b49876fb5-b7n4d'
+  metadata:
+    creationTimestamp: 2017-11-08T17:01:13Z
+    name: ebs-only-client-7b49876fb5.14f52af306c18403
+    namespace: default
+    resourceVersion: "2916"
+    selfLink: /api/v1/namespaces/default/events/ebs-only-client-7b49876fb5.14f52af306c18403
+    uid: 6d2cc14a-c4a6-11e7-b096-0a570863b3d2
+  reason: SuccessfulCreate
+  source:
+    component: replicaset-controller
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T16:44:44Z
+  involvedObject:
+    apiVersion: extensions
+    kind: Deployment
+    name: ebs-only-client
+    namespace: default
+    resourceVersion: "584817"
+    uid: c9c22c88-c432-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T16:44:44Z
+  message: Scaled down replica set ebs-only-client-7b49876fb5 to 0
+  metadata:
+    creationTimestamp: 2017-11-08T16:44:44Z
+    name: ebs-only-client.14f52a0cd4087fce
+    namespace: default
+    resourceVersion: "2862"
+    selfLink: /api/v1/namespaces/default/events/ebs-only-client.14f52a0cd4087fce
+    uid: 1fdf17aa-c4a4-11e7-b096-0a570863b3d2
+  reason: ScalingReplicaSet
+  source:
+    component: deployment-controller
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T16:48:37Z
+  involvedObject:
+    apiVersion: extensions
+    kind: Deployment
+    name: ebs-only-client
+    namespace: default
+    resourceVersion: "585172"
+    uid: aace2294-c4a4-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T16:48:37Z
+  message: Scaled up replica set ebs-only-client-7b49876fb5 to 1
+  metadata:
+    creationTimestamp: 2017-11-08T16:48:37Z
+    name: ebs-only-client.14f52a431aa7416c
+    namespace: default
+    resourceVersion: "2868"
+    selfLink: /api/v1/namespaces/default/events/ebs-only-client.14f52a431aa7416c
+    uid: aad00c14-c4a4-11e7-b096-0a570863b3d2
+  reason: ScalingReplicaSet
+  source:
+    component: deployment-controller
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T17:06:04Z
+  involvedObject:
+    kind: Node
+    name: ip-172-20-42-224.us-west-2.compute.internal
+    uid: ip-172-20-42-224.us-west-2.compute.internal
+  kind: Event
+  lastTimestamp: 2017-11-08T17:06:04Z
+  message: Starting kubelet.
+  metadata:
+    creationTimestamp: 2017-11-08T17:06:05Z
+    name: ip-172-20-42-224.us-west-2.compute.internal.14f52b36edd22fae
+    namespace: default
+    resourceVersion: "2935"
+    selfLink: /api/v1/namespaces/default/events/ip-172-20-42-224.us-west-2.compute.internal.14f52b36edd22fae
+    uid: 1b0a178c-c4a7-11e7-b096-0a570863b3d2
+  reason: Starting
+  source:
+    component: kubelet
+    host: ip-172-20-42-224.us-west-2.compute.internal
+  type: Normal
+- apiVersion: v1
+  count: 2
+  firstTimestamp: 2017-11-08T17:06:04Z
+  involvedObject:
+    kind: Node
+    name: ip-172-20-42-224.us-west-2.compute.internal
+    uid: ip-172-20-42-224.us-west-2.compute.internal
+  kind: Event
+  lastTimestamp: 2017-11-08T17:06:05Z
+  message: 'Node ip-172-20-42-224.us-west-2.compute.internal status is now: NodeHasSufficientDisk'
+  metadata:
+    creationTimestamp: 2017-11-08T17:06:05Z
+    name: ip-172-20-42-224.us-west-2.compute.internal.14f52b36ee4749b2
+    namespace: default
+    resourceVersion: "2940"
+    selfLink: /api/v1/namespaces/default/events/ip-172-20-42-224.us-west-2.compute.internal.14f52b36ee4749b2
+    uid: 1b0c0d4a-c4a7-11e7-b096-0a570863b3d2
+  reason: NodeHasSufficientDisk
+  source:
+    component: kubelet
+    host: ip-172-20-42-224.us-west-2.compute.internal
+  type: Normal
+- apiVersion: v1
+  count: 2
+  firstTimestamp: 2017-11-08T17:06:04Z
+  involvedObject:
+    kind: Node
+    name: ip-172-20-42-224.us-west-2.compute.internal
+    uid: ip-172-20-42-224.us-west-2.compute.internal
+  kind: Event
+  lastTimestamp: 2017-11-08T17:06:05Z
+  message: 'Node ip-172-20-42-224.us-west-2.compute.internal status is now: NodeHasSufficientMemory'
+  metadata:
+    creationTimestamp: 2017-11-08T17:06:05Z
+    name: ip-172-20-42-224.us-west-2.compute.internal.14f52b36ee476fab
+    namespace: default
+    resourceVersion: "2941"
+    selfLink: /api/v1/namespaces/default/events/ip-172-20-42-224.us-west-2.compute.internal.14f52b36ee476fab
+    uid: 1b0c8e76-c4a7-11e7-b096-0a570863b3d2
+  reason: NodeHasSufficientMemory
+  source:
+    component: kubelet
+    host: ip-172-20-42-224.us-west-2.compute.internal
+  type: Normal
+- apiVersion: v1
+  count: 2
+  firstTimestamp: 2017-11-08T17:06:04Z
+  involvedObject:
+    kind: Node
+    name: ip-172-20-42-224.us-west-2.compute.internal
+    uid: ip-172-20-42-224.us-west-2.compute.internal
+  kind: Event
+  lastTimestamp: 2017-11-08T17:06:05Z
+  message: 'Node ip-172-20-42-224.us-west-2.compute.internal status is now: NodeHasNoDiskPressure'
+  metadata:
+    creationTimestamp: 2017-11-08T17:06:05Z
+    name: ip-172-20-42-224.us-west-2.compute.internal.14f52b36ee478c0c
+    namespace: default
+    resourceVersion: "2942"
+    selfLink: /api/v1/namespaces/default/events/ip-172-20-42-224.us-west-2.compute.internal.14f52b36ee478c0c
+    uid: 1b0cd9ab-c4a7-11e7-b096-0a570863b3d2
+  reason: NodeHasNoDiskPressure
+  source:
+    component: kubelet
+    host: ip-172-20-42-224.us-west-2.compute.internal
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T17:06:04Z
+  involvedObject:
+    kind: Node
+    name: ip-172-20-42-224.us-west-2.compute.internal
+    uid: ip-172-20-42-224.us-west-2.compute.internal
+  kind: Event
+  lastTimestamp: 2017-11-08T17:06:04Z
+  message: Updated Node Allocatable limit across pods
+  metadata:
+    creationTimestamp: 2017-11-08T17:06:05Z
+    name: ip-172-20-42-224.us-west-2.compute.internal.14f52b36ef0ae151
+    namespace: default
+    resourceVersion: "2939"
+    selfLink: /api/v1/namespaces/default/events/ip-172-20-42-224.us-west-2.compute.internal.14f52b36ef0ae151
+    uid: 1b0d23a2-c4a7-11e7-b096-0a570863b3d2
+  reason: NodeAllocatableEnforced
+  source:
+    component: kubelet
+    host: ip-172-20-42-224.us-west-2.compute.internal
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T17:06:09Z
+  involvedObject:
+    kind: Node
+    name: ip-172-20-42-224.us-west-2.compute.internal
+    uid: 1b1354e8-c4a7-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T17:06:09Z
+  message: 'Node ip-172-20-42-224.us-west-2.compute.internal event: Registered Node
+    ip-172-20-42-224.us-west-2.compute.internal in Controller'
+  metadata:
+    creationTimestamp: 2017-11-08T17:06:09Z
+    name: ip-172-20-42-224.us-west-2.compute.internal.14f52b37fdee2950
+    namespace: default
+    resourceVersion: "2944"
+    selfLink: /api/v1/namespaces/default/events/ip-172-20-42-224.us-west-2.compute.internal.14f52b37fdee2950
+    uid: 1db99bfb-c4a7-11e7-b096-0a570863b3d2
+  reason: RegisteredNode
+  source:
+    component: controllermanager
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T17:06:14Z
+  involvedObject:
+    kind: Node
+    name: ip-172-20-42-224.us-west-2.compute.internal
+    uid: ip-172-20-42-224.us-west-2.compute.internal
+  kind: Event
+  lastTimestamp: 2017-11-08T17:06:14Z
+  message: Starting kube-proxy.
+  metadata:
+    creationTimestamp: 2017-11-08T17:06:14Z
+    name: ip-172-20-42-224.us-west-2.compute.internal.14f52b393bbdc34f
+    namespace: default
+    resourceVersion: "2960"
+    selfLink: /api/v1/namespaces/default/events/ip-172-20-42-224.us-west-2.compute.internal.14f52b393bbdc34f
+    uid: 20e6a7c2-c4a7-11e7-b096-0a570863b3d2
+  reason: Starting
+  source:
+    component: kube-proxy
+    host: ip-172-20-42-224.us-west-2.compute.internal
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T17:06:25Z
+  involvedObject:
+    kind: Node
+    name: ip-172-20-42-224.us-west-2.compute.internal
+    uid: ip-172-20-42-224.us-west-2.compute.internal
+  kind: Event
+  lastTimestamp: 2017-11-08T17:06:25Z
+  message: 'Node ip-172-20-42-224.us-west-2.compute.internal status is now: NodeReady'
+  metadata:
+    creationTimestamp: 2017-11-08T17:06:25Z
+    name: ip-172-20-42-224.us-west-2.compute.internal.14f52b3ba03dcff1
+    namespace: default
+    resourceVersion: "2961"
+    selfLink: /api/v1/namespaces/default/events/ip-172-20-42-224.us-west-2.compute.internal.14f52b3ba03dcff1
+    uid: 2706bd8a-c4a7-11e7-b096-0a570863b3d2
+  reason: NodeReady
+  source:
+    component: kubelet
+    host: ip-172-20-42-224.us-west-2.compute.internal
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T17:00:24Z
+  involvedObject:
+    kind: Node
+    name: ip-172-20-61-205.us-west-2.compute.internal
+    uid: ip-172-20-61-205.us-west-2.compute.internal
+  kind: Event
+  lastTimestamp: 2017-11-08T17:00:24Z
+  message: 'Could not create route 6e4b6ac9-c434-11e7-b096-0a570863b3d2 100.96.5.0/24
+    for node ip-172-20-61-205.us-west-2.compute.internal after 187.887233ms: instance
+    not found'
+  metadata:
+    creationTimestamp: 2017-11-08T17:00:24Z
+    name: ip-172-20-61-205.us-west-2.compute.internal.14f52ae791b3ded6
+    namespace: default
+    resourceVersion: "2886"
+    selfLink: /api/v1/namespaces/default/events/ip-172-20-61-205.us-west-2.compute.internal.14f52ae791b3ded6
+    uid: 4fd7accd-c4a6-11e7-b096-0a570863b3d2
+  reason: FailedToCreateRoute
+  source:
+    component: route_controller
+  type: Warning
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T17:00:24Z
+  involvedObject:
+    kind: Node
+    name: ip-172-20-61-205.us-west-2.compute.internal
+    uid: ip-172-20-61-205.us-west-2.compute.internal
+  kind: Event
+  lastTimestamp: 2017-11-08T17:00:24Z
+  message: 'Could not create route 6e4b6ac9-c434-11e7-b096-0a570863b3d2 100.96.5.0/24
+    for node ip-172-20-61-205.us-west-2.compute.internal after 43.421295ms: instance
+    not found'
+  metadata:
+    creationTimestamp: 2017-11-08T17:00:24Z
+    name: ip-172-20-61-205.us-west-2.compute.internal.14f52ae7944b8c7f
+    namespace: default
+    resourceVersion: "2887"
+    selfLink: /api/v1/namespaces/default/events/ip-172-20-61-205.us-west-2.compute.internal.14f52ae7944b8c7f
+    uid: 4fde4f07-c4a6-11e7-b096-0a570863b3d2
+  reason: FailedToCreateRoute
+  source:
+    component: route_controller
+  type: Warning
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T17:00:24Z
+  involvedObject:
+    kind: Node
+    name: ip-172-20-61-205.us-west-2.compute.internal
+    uid: ip-172-20-61-205.us-west-2.compute.internal
+  kind: Event
+  lastTimestamp: 2017-11-08T17:00:24Z
+  message: 'Could not create route 6e4b6ac9-c434-11e7-b096-0a570863b3d2 100.96.5.0/24
+    for node ip-172-20-61-205.us-west-2.compute.internal after 44.413451ms: instance
+    not found'
+  metadata:
+    creationTimestamp: 2017-11-08T17:00:24Z
+    name: ip-172-20-61-205.us-west-2.compute.internal.14f52ae796f2a6aa
+    namespace: default
+    resourceVersion: "2888"
+    selfLink: /api/v1/namespaces/default/events/ip-172-20-61-205.us-west-2.compute.internal.14f52ae796f2a6aa
+    uid: 4fe514e1-c4a6-11e7-b096-0a570863b3d2
+  reason: FailedToCreateRoute
+  source:
+    component: route_controller
+  type: Warning
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T17:00:24Z
+  involvedObject:
+    kind: Node
+    name: ip-172-20-61-205.us-west-2.compute.internal
+    uid: ip-172-20-61-205.us-west-2.compute.internal
+  kind: Event
+  lastTimestamp: 2017-11-08T17:00:24Z
+  message: 'Could not create route 6e4b6ac9-c434-11e7-b096-0a570863b3d2 100.96.5.0/24
+    for node ip-172-20-61-205.us-west-2.compute.internal after 44.053456ms: instance
+    not found'
+  metadata:
+    creationTimestamp: 2017-11-08T17:00:24Z
+    name: ip-172-20-61-205.us-west-2.compute.internal.14f52ae79993e26c
+    namespace: default
+    resourceVersion: "2889"
+    selfLink: /api/v1/namespaces/default/events/ip-172-20-61-205.us-west-2.compute.internal.14f52ae79993e26c
+    uid: 4febd451-c4a6-11e7-b096-0a570863b3d2
+  reason: FailedToCreateRoute
+  source:
+    component: route_controller
+  type: Warning
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T17:00:24Z
+  involvedObject:
+    kind: Node
+    name: ip-172-20-61-205.us-west-2.compute.internal
+    uid: ip-172-20-61-205.us-west-2.compute.internal
+  kind: Event
+  lastTimestamp: 2017-11-08T17:00:24Z
+  message: 'Could not create route 6e4b6ac9-c434-11e7-b096-0a570863b3d2 100.96.5.0/24
+    for node ip-172-20-61-205.us-west-2.compute.internal after 40.853002ms: instance
+    not found'
+  metadata:
+    creationTimestamp: 2017-11-08T17:00:24Z
+    name: ip-172-20-61-205.us-west-2.compute.internal.14f52ae79c041f76
+    namespace: default
+    resourceVersion: "2890"
+    selfLink: /api/v1/namespaces/default/events/ip-172-20-61-205.us-west-2.compute.internal.14f52ae79c041f76
+    uid: 4ff2043c-c4a6-11e7-b096-0a570863b3d2
+  reason: FailedToCreateRoute
+  source:
+    component: route_controller
+  type: Warning
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T17:00:34Z
+  involvedObject:
+    kind: Node
+    name: ip-172-20-61-205.us-west-2.compute.internal
+    uid: ip-172-20-61-205.us-west-2.compute.internal
+  kind: Event
+  lastTimestamp: 2017-11-08T17:00:34Z
+  message: 'Could not create route 6e4b6ac9-c434-11e7-b096-0a570863b3d2 100.96.5.0/24
+    for node ip-172-20-61-205.us-west-2.compute.internal after 52.424496ms: instance
+    not found'
+  metadata:
+    creationTimestamp: 2017-11-08T17:00:34Z
+    name: ip-172-20-61-205.us-west-2.compute.internal.14f52ae9e915cd77
+    namespace: default
+    resourceVersion: "2891"
+    selfLink: /api/v1/namespaces/default/events/ip-172-20-61-205.us-west-2.compute.internal.14f52ae9e915cd77
+    uid: 55d6178f-c4a6-11e7-b096-0a570863b3d2
+  reason: FailedToCreateRoute
+  source:
+    component: route_controller
+  type: Warning
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T17:00:34Z
+  involvedObject:
+    kind: Node
+    name: ip-172-20-61-205.us-west-2.compute.internal
+    uid: ip-172-20-61-205.us-west-2.compute.internal
+  kind: Event
+  lastTimestamp: 2017-11-08T17:00:34Z
+  message: 'Could not create route 6e4b6ac9-c434-11e7-b096-0a570863b3d2 100.96.5.0/24
+    for node ip-172-20-61-205.us-west-2.compute.internal after 40.817185ms: instance
+    not found'
+  metadata:
+    creationTimestamp: 2017-11-08T17:00:34Z
+    name: ip-172-20-61-205.us-west-2.compute.internal.14f52ae9eb85a33d
+    namespace: default
+    resourceVersion: "2892"
+    selfLink: /api/v1/namespaces/default/events/ip-172-20-61-205.us-west-2.compute.internal.14f52ae9eb85a33d
+    uid: 55dc51a7-c4a6-11e7-b096-0a570863b3d2
+  reason: FailedToCreateRoute
+  source:
+    component: route_controller
+  type: Warning
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T17:00:34Z
+  involvedObject:
+    kind: Node
+    name: ip-172-20-61-205.us-west-2.compute.internal
+    uid: ip-172-20-61-205.us-west-2.compute.internal
+  kind: Event
+  lastTimestamp: 2017-11-08T17:00:34Z
+  message: 'Could not create route 6e4b6ac9-c434-11e7-b096-0a570863b3d2 100.96.5.0/24
+    for node ip-172-20-61-205.us-west-2.compute.internal after 40.374932ms: instance
+    not found'
+  metadata:
+    creationTimestamp: 2017-11-08T17:00:34Z
+    name: ip-172-20-61-205.us-west-2.compute.internal.14f52ae9edee9d5f
+    namespace: default
+    resourceVersion: "2893"
+    selfLink: /api/v1/namespaces/default/events/ip-172-20-61-205.us-west-2.compute.internal.14f52ae9edee9d5f
+    uid: 55e27af3-c4a6-11e7-b096-0a570863b3d2
+  reason: FailedToCreateRoute
+  source:
+    component: route_controller
+  type: Warning
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T17:00:34Z
+  involvedObject:
+    kind: Node
+    name: ip-172-20-61-205.us-west-2.compute.internal
+    uid: ip-172-20-61-205.us-west-2.compute.internal
+  kind: Event
+  lastTimestamp: 2017-11-08T17:00:34Z
+  message: 'Could not create route 6e4b6ac9-c434-11e7-b096-0a570863b3d2 100.96.5.0/24
+    for node ip-172-20-61-205.us-west-2.compute.internal after 44.189716ms: instance
+    not found'
+  metadata:
+    creationTimestamp: 2017-11-08T17:00:34Z
+    name: ip-172-20-61-205.us-west-2.compute.internal.14f52ae9f091cb48
+    namespace: default
+    resourceVersion: "2894"
+    selfLink: /api/v1/namespaces/default/events/ip-172-20-61-205.us-west-2.compute.internal.14f52ae9f091cb48
+    uid: 55e93d3a-c4a6-11e7-b096-0a570863b3d2
+  reason: FailedToCreateRoute
+  source:
+    component: route_controller
+  type: Warning
+- apiVersion: v1
+  count: 11
+  firstTimestamp: 2017-11-08T17:00:34Z
+  involvedObject:
+    kind: Node
+    name: ip-172-20-61-205.us-west-2.compute.internal
+    uid: ip-172-20-61-205.us-west-2.compute.internal
+  kind: Event
+  lastTimestamp: 2017-11-08T17:00:54Z
+  message: '(combined from similar events): Could not create route 6e4b6ac9-c434-11e7-b096-0a570863b3d2
+    100.96.5.0/24 for node ip-172-20-61-205.us-west-2.compute.internal after 108.331034ms:
+    instance not found'
+  metadata:
+    creationTimestamp: 2017-11-08T17:00:34Z
+    name: ip-172-20-61-205.us-west-2.compute.internal.14f52ae9f32acbbd
+    namespace: default
+    resourceVersion: "2907"
+    selfLink: /api/v1/namespaces/default/events/ip-172-20-61-205.us-west-2.compute.internal.14f52ae9f32acbbd
+    uid: 55efd6a0-c4a6-11e7-b096-0a570863b3d2
+  reason: FailedToCreateRoute
+  source:
+    component: route_controller
+  type: Warning
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T17:00:54Z
+  involvedObject:
+    kind: Node
+    name: ip-172-20-61-205.us-west-2.compute.internal
+    uid: 6e4b6ac9-c434-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T17:00:54Z
+  message: 'Node ip-172-20-61-205.us-west-2.compute.internal status is now: NodeNotReady'
+  metadata:
+    creationTimestamp: 2017-11-08T17:00:54Z
+    name: ip-172-20-61-205.us-west-2.compute.internal.14f52aee98293201
+    namespace: default
+    resourceVersion: "2903"
+    selfLink: /api/v1/namespaces/default/events/ip-172-20-61-205.us-west-2.compute.internal.14f52aee98293201
+    uid: 61d3fe4d-c4a6-11e7-b096-0a570863b3d2
+  reason: NodeNotReady
+  source:
+    component: controllermanager
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T17:00:54Z
+  involvedObject:
+    kind: Node
+    name: ip-172-20-61-205.us-west-2.compute.internal
+    uid: 6e4b6ac9-c434-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T17:00:54Z
+  message: 'Node ip-172-20-61-205.us-west-2.compute.internal event: Deleting Node
+    ip-172-20-61-205.us-west-2.compute.internal because it''s not present according
+    to cloud provider'
+  metadata:
+    creationTimestamp: 2017-11-08T17:00:54Z
+    name: ip-172-20-61-205.us-west-2.compute.internal.14f52aeea22d9e74
+    namespace: default
+    resourceVersion: "2906"
+    selfLink: /api/v1/namespaces/default/events/ip-172-20-61-205.us-west-2.compute.internal.14f52aeea22d9e74
+    uid: 61ed672a-c4a6-11e7-b096-0a570863b3d2
+  reason: DeletingNode
+  source:
+    component: controllermanager
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T17:00:59Z
+  involvedObject:
+    kind: Node
+    name: ip-172-20-61-205.us-west-2.compute.internal
+    uid: 6e4b6ac9-c434-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T17:00:59Z
+  message: 'Node ip-172-20-61-205.us-west-2.compute.internal event: Removing Node
+    ip-172-20-61-205.us-west-2.compute.internal from Controller'
+  metadata:
+    creationTimestamp: 2017-11-08T17:00:59Z
+    name: ip-172-20-61-205.us-west-2.compute.internal.14f52aefcca09154
+    namespace: default
+    resourceVersion: "2908"
+    selfLink: /api/v1/namespaces/default/events/ip-172-20-61-205.us-west-2.compute.internal.14f52aefcca09154
+    uid: 64e96bc8-c4a6-11e7-b096-0a570863b3d2
+  reason: RemovingNode
+  source:
+    component: controllermanager
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T16:48:41Z
+  involvedObject:
+    apiVersion: v1
+    kind: Pod
+    name: rook-only-client-667d7dfd44-6sdxc
+    namespace: default
+    resourceVersion: "585187"
+    uid: ad07f7d3-c4a4-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T16:48:41Z
+  message: Successfully assigned rook-only-client-667d7dfd44-6sdxc to ip-172-20-61-205.us-west-2.compute.internal
+  metadata:
+    creationTimestamp: 2017-11-08T16:48:41Z
+    name: rook-only-client-667d7dfd44-6sdxc.14f52a43fb4cb98c
+    namespace: default
+    resourceVersion: "2874"
+    selfLink: /api/v1/namespaces/default/events/rook-only-client-667d7dfd44-6sdxc.14f52a43fb4cb98c
+    uid: ad0ef7ad-c4a4-11e7-b096-0a570863b3d2
+  reason: Scheduled
+  source:
+    component: default-scheduler
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T16:48:41Z
+  involvedObject:
+    apiVersion: v1
+    kind: Pod
+    name: rook-only-client-667d7dfd44-6sdxc
+    namespace: default
+    resourceVersion: "585189"
+    uid: ad07f7d3-c4a4-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T16:48:41Z
+  message: 'MountVolume.SetUp succeeded for volume "default-token-thxk7" '
+  metadata:
+    creationTimestamp: 2017-11-08T16:48:41Z
+    name: rook-only-client-667d7dfd44-6sdxc.14f52a440ba7e368
+    namespace: default
+    resourceVersion: "2875"
+    selfLink: /api/v1/namespaces/default/events/rook-only-client-667d7dfd44-6sdxc.14f52a440ba7e368
+    uid: ad37efef-c4a4-11e7-b096-0a570863b3d2
+  reason: SuccessfulMountVolume
+  source:
+    component: kubelet
+    host: ip-172-20-61-205.us-west-2.compute.internal
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T16:48:41Z
+  involvedObject:
+    apiVersion: v1
+    kind: Pod
+    name: rook-only-client-667d7dfd44-6sdxc
+    namespace: default
+    resourceVersion: "585189"
+    uid: ad07f7d3-c4a4-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T16:48:41Z
+  message: 'MountVolume.SetUp succeeded for volume "pvc-60384409-c0e4-11e7-b096-0a570863b3d2" '
+  metadata:
+    creationTimestamp: 2017-11-08T16:48:41Z
+    name: rook-only-client-667d7dfd44-6sdxc.14f52a44176e4574
+    namespace: default
+    resourceVersion: "2876"
+    selfLink: /api/v1/namespaces/default/events/rook-only-client-667d7dfd44-6sdxc.14f52a44176e4574
+    uid: ad561805-c4a4-11e7-b096-0a570863b3d2
+  reason: SuccessfulMountVolume
+  source:
+    component: kubelet
+    host: ip-172-20-61-205.us-west-2.compute.internal
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T16:48:42Z
+  involvedObject:
+    apiVersion: v1
+    fieldPath: spec.containers{rookeval}
+    kind: Pod
+    name: rook-only-client-667d7dfd44-6sdxc
+    namespace: default
+    resourceVersion: "585189"
+    uid: ad07f7d3-c4a4-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T16:48:42Z
+  message: pulling image "ubuntu"
+  metadata:
+    creationTimestamp: 2017-11-08T16:48:42Z
+    name: rook-only-client-667d7dfd44-6sdxc.14f52a442ead1cad
+    namespace: default
+    resourceVersion: "2877"
+    selfLink: /api/v1/namespaces/default/events/rook-only-client-667d7dfd44-6sdxc.14f52a442ead1cad
+    uid: ad91aa62-c4a4-11e7-b096-0a570863b3d2
+  reason: Pulling
+  source:
+    component: kubelet
+    host: ip-172-20-61-205.us-west-2.compute.internal
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T16:48:48Z
+  involvedObject:
+    apiVersion: v1
+    fieldPath: spec.containers{rookeval}
+    kind: Pod
+    name: rook-only-client-667d7dfd44-6sdxc
+    namespace: default
+    resourceVersion: "585189"
+    uid: ad07f7d3-c4a4-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T16:48:48Z
+  message: Successfully pulled image "ubuntu"
+  metadata:
+    creationTimestamp: 2017-11-08T16:48:48Z
+    name: rook-only-client-667d7dfd44-6sdxc.14f52a45a871b6de
+    namespace: default
+    resourceVersion: "2878"
+    selfLink: /api/v1/namespaces/default/events/rook-only-client-667d7dfd44-6sdxc.14f52a45a871b6de
+    uid: b158b240-c4a4-11e7-b096-0a570863b3d2
+  reason: Pulled
+  source:
+    component: kubelet
+    host: ip-172-20-61-205.us-west-2.compute.internal
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T16:48:48Z
+  involvedObject:
+    apiVersion: v1
+    fieldPath: spec.containers{rookeval}
+    kind: Pod
+    name: rook-only-client-667d7dfd44-6sdxc
+    namespace: default
+    resourceVersion: "585189"
+    uid: ad07f7d3-c4a4-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T16:48:48Z
+  message: Created container
+  metadata:
+    creationTimestamp: 2017-11-08T16:48:48Z
+    name: rook-only-client-667d7dfd44-6sdxc.14f52a45ab485243
+    namespace: default
+    resourceVersion: "2879"
+    selfLink: /api/v1/namespaces/default/events/rook-only-client-667d7dfd44-6sdxc.14f52a45ab485243
+    uid: b15ff0fd-c4a4-11e7-b096-0a570863b3d2
+  reason: Created
+  source:
+    component: kubelet
+    host: ip-172-20-61-205.us-west-2.compute.internal
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T16:48:48Z
+  involvedObject:
+    apiVersion: v1
+    fieldPath: spec.containers{rookeval}
+    kind: Pod
+    name: rook-only-client-667d7dfd44-6sdxc
+    namespace: default
+    resourceVersion: "585189"
+    uid: ad07f7d3-c4a4-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T16:48:48Z
+  message: Started container
+  metadata:
+    creationTimestamp: 2017-11-08T16:48:48Z
+    name: rook-only-client-667d7dfd44-6sdxc.14f52a45afbb094a
+    namespace: default
+    resourceVersion: "2880"
+    selfLink: /api/v1/namespaces/default/events/rook-only-client-667d7dfd44-6sdxc.14f52a45afbb094a
+    uid: b16b5caf-c4a4-11e7-b096-0a570863b3d2
+  reason: Started
+  source:
+    component: kubelet
+    host: ip-172-20-61-205.us-west-2.compute.internal
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T17:01:13Z
+  involvedObject:
+    apiVersion: v1
+    kind: Pod
+    name: rook-only-client-667d7dfd44-dgszt
+    namespace: default
+    resourceVersion: "586267"
+    uid: 6d0eb95d-c4a6-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T17:01:13Z
+  message: Successfully assigned rook-only-client-667d7dfd44-dgszt to ip-172-20-37-153.us-west-2.compute.internal
+  metadata:
+    creationTimestamp: 2017-11-08T17:01:13Z
+    name: rook-only-client-667d7dfd44-dgszt.14f52af2fec7cc62
+    namespace: default
+    resourceVersion: "2915"
+    selfLink: /api/v1/namespaces/default/events/rook-only-client-667d7dfd44-dgszt.14f52af2fec7cc62
+    uid: 6d19c0a4-c4a6-11e7-b096-0a570863b3d2
+  reason: Scheduled
+  source:
+    component: default-scheduler
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T17:01:13Z
+  involvedObject:
+    apiVersion: v1
+    kind: Pod
+    name: rook-only-client-667d7dfd44-dgszt
+    namespace: default
+    resourceVersion: "586269"
+    uid: 6d0eb95d-c4a6-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T17:01:13Z
+  message: 'MountVolume.SetUp succeeded for volume "default-token-thxk7" '
+  metadata:
+    creationTimestamp: 2017-11-08T17:01:13Z
+    name: rook-only-client-667d7dfd44-dgszt.14f52af30f7709ec
+    namespace: default
+    resourceVersion: "2918"
+    selfLink: /api/v1/namespaces/default/events/rook-only-client-667d7dfd44-dgszt.14f52af30f7709ec
+    uid: 6d429007-c4a6-11e7-b096-0a570863b3d2
+  reason: SuccessfulMountVolume
+  source:
+    component: kubelet
+    host: ip-172-20-37-153.us-west-2.compute.internal
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T17:01:13Z
+  involvedObject:
+    apiVersion: v1
+    kind: Pod
+    name: rook-only-client-667d7dfd44-dgszt
+    namespace: default
+    resourceVersion: "586269"
+    uid: 6d0eb95d-c4a6-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T17:01:13Z
+  message: 'MountVolume.SetUp succeeded for volume "pvc-60384409-c0e4-11e7-b096-0a570863b3d2" '
+  metadata:
+    creationTimestamp: 2017-11-08T17:01:13Z
+    name: rook-only-client-667d7dfd44-dgszt.14f52af31b3851cc
+    namespace: default
+    resourceVersion: "2920"
+    selfLink: /api/v1/namespaces/default/events/rook-only-client-667d7dfd44-dgszt.14f52af31b3851cc
+    uid: 6d608b2c-c4a6-11e7-b096-0a570863b3d2
+  reason: SuccessfulMountVolume
+  source:
+    component: kubelet
+    host: ip-172-20-37-153.us-west-2.compute.internal
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T17:01:14Z
+  involvedObject:
+    apiVersion: v1
+    fieldPath: spec.containers{rookeval}
+    kind: Pod
+    name: rook-only-client-667d7dfd44-dgszt
+    namespace: default
+    resourceVersion: "586269"
+    uid: 6d0eb95d-c4a6-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T17:01:14Z
+  message: pulling image "ubuntu"
+  metadata:
+    creationTimestamp: 2017-11-08T17:01:14Z
+    name: rook-only-client-667d7dfd44-dgszt.14f52af3314b39eb
+    namespace: default
+    resourceVersion: "2921"
+    selfLink: /api/v1/namespaces/default/events/rook-only-client-667d7dfd44-dgszt.14f52af3314b39eb
+    uid: 6d991ac3-c4a6-11e7-b096-0a570863b3d2
+  reason: Pulling
+  source:
+    component: kubelet
+    host: ip-172-20-37-153.us-west-2.compute.internal
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T17:01:15Z
+  involvedObject:
+    apiVersion: v1
+    fieldPath: spec.containers{rookeval}
+    kind: Pod
+    name: rook-only-client-667d7dfd44-dgszt
+    namespace: default
+    resourceVersion: "586269"
+    uid: 6d0eb95d-c4a6-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T17:01:15Z
+  message: Successfully pulled image "ubuntu"
+  metadata:
+    creationTimestamp: 2017-11-08T17:01:15Z
+    name: rook-only-client-667d7dfd44-dgszt.14f52af383585054
+    namespace: default
+    resourceVersion: "2922"
+    selfLink: /api/v1/namespaces/default/events/rook-only-client-667d7dfd44-dgszt.14f52af383585054
+    uid: 6e6b3182-c4a6-11e7-b096-0a570863b3d2
+  reason: Pulled
+  source:
+    component: kubelet
+    host: ip-172-20-37-153.us-west-2.compute.internal
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T17:01:15Z
+  involvedObject:
+    apiVersion: v1
+    fieldPath: spec.containers{rookeval}
+    kind: Pod
+    name: rook-only-client-667d7dfd44-dgszt
+    namespace: default
+    resourceVersion: "586269"
+    uid: 6d0eb95d-c4a6-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T17:01:15Z
+  message: Created container
+  metadata:
+    creationTimestamp: 2017-11-08T17:01:15Z
+    name: rook-only-client-667d7dfd44-dgszt.14f52af386b712a5
+    namespace: default
+    resourceVersion: "2923"
+    selfLink: /api/v1/namespaces/default/events/rook-only-client-667d7dfd44-dgszt.14f52af386b712a5
+    uid: 6e73b89a-c4a6-11e7-b096-0a570863b3d2
+  reason: Created
+  source:
+    component: kubelet
+    host: ip-172-20-37-153.us-west-2.compute.internal
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T17:01:15Z
+  involvedObject:
+    apiVersion: v1
+    fieldPath: spec.containers{rookeval}
+    kind: Pod
+    name: rook-only-client-667d7dfd44-dgszt
+    namespace: default
+    resourceVersion: "586269"
+    uid: 6d0eb95d-c4a6-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T17:01:15Z
+  message: Started container
+  metadata:
+    creationTimestamp: 2017-11-08T17:01:15Z
+    name: rook-only-client-667d7dfd44-dgszt.14f52af38a8e77eb
+    namespace: default
+    resourceVersion: "2924"
+    selfLink: /api/v1/namespaces/default/events/rook-only-client-667d7dfd44-dgszt.14f52af38a8e77eb
+    uid: 6e7d90cd-c4a6-11e7-b096-0a570863b3d2
+  reason: Started
+  source:
+    component: kubelet
+    host: ip-172-20-37-153.us-west-2.compute.internal
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T16:45:24Z
+  involvedObject:
+    apiVersion: v1
+    fieldPath: spec.containers{rookeval}
+    kind: Pod
+    name: rook-only-client-667d7dfd44-rbxgq
+    namespace: default
+    resourceVersion: "517715"
+    uid: f8a1aeb7-c433-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T16:45:24Z
+  message: Killing container with id docker://rookeval:Need to kill Pod
+  metadata:
+    creationTimestamp: 2017-11-08T16:45:24Z
+    name: rook-only-client-667d7dfd44-rbxgq.14f52a161a14c7fa
+    namespace: default
+    resourceVersion: "2867"
+    selfLink: /api/v1/namespaces/default/events/rook-only-client-667d7dfd44-rbxgq.14f52a161a14c7fa
+    uid: 379b05bb-c4a4-11e7-b096-0a570863b3d2
+  reason: Killing
+  source:
+    component: kubelet
+    host: ip-172-20-51-182.us-west-2.compute.internal
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T16:44:54Z
+  involvedObject:
+    apiVersion: extensions
+    kind: ReplicaSet
+    name: rook-only-client-667d7dfd44
+    namespace: default
+    resourceVersion: "584841"
+    uid: cc3b3463-c432-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T16:44:54Z
+  message: 'Deleted pod: rook-only-client-667d7dfd44-rbxgq'
+  metadata:
+    creationTimestamp: 2017-11-08T16:44:54Z
+    name: rook-only-client-667d7dfd44.14f52a0f1a93c97f
+    namespace: default
+    resourceVersion: "2865"
+    selfLink: /api/v1/namespaces/default/events/rook-only-client-667d7dfd44.14f52a0f1a93c97f
+    uid: 25b3d65a-c4a4-11e7-b096-0a570863b3d2
+  reason: SuccessfulDelete
+  source:
+    component: replicaset-controller
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T16:48:41Z
+  involvedObject:
+    apiVersion: extensions
+    kind: ReplicaSet
+    name: rook-only-client-667d7dfd44
+    namespace: default
+    resourceVersion: "585186"
+    uid: ad074caf-c4a4-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T16:48:41Z
+  message: 'Created pod: rook-only-client-667d7dfd44-6sdxc'
+  metadata:
+    creationTimestamp: 2017-11-08T16:48:41Z
+    name: rook-only-client-667d7dfd44.14f52a43f9a46988
+    namespace: default
+    resourceVersion: "2873"
+    selfLink: /api/v1/namespaces/default/events/rook-only-client-667d7dfd44.14f52a43f9a46988
+    uid: ad0c6d41-c4a4-11e7-b096-0a570863b3d2
+  reason: SuccessfulCreate
+  source:
+    component: replicaset-controller
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T17:01:13Z
+  involvedObject:
+    apiVersion: extensions
+    kind: ReplicaSet
+    name: rook-only-client-667d7dfd44
+    namespace: default
+    resourceVersion: "586234"
+    uid: ad074caf-c4a4-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T17:01:13Z
+  message: 'Created pod: rook-only-client-667d7dfd44-dgszt'
+  metadata:
+    creationTimestamp: 2017-11-08T17:01:13Z
+    name: rook-only-client-667d7dfd44.14f52af2fcccb7fc
+    namespace: default
+    resourceVersion: "2914"
+    selfLink: /api/v1/namespaces/default/events/rook-only-client-667d7dfd44.14f52af2fcccb7fc
+    uid: 6d14efa5-c4a6-11e7-b096-0a570863b3d2
+  reason: SuccessfulCreate
+  source:
+    component: replicaset-controller
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T16:44:54Z
+  involvedObject:
+    apiVersion: extensions
+    kind: Deployment
+    name: rook-only-client
+    namespace: default
+    resourceVersion: "584839"
+    uid: cc3a5e49-c432-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T16:44:54Z
+  message: Scaled down replica set rook-only-client-667d7dfd44 to 0
+  metadata:
+    creationTimestamp: 2017-11-08T16:44:54Z
+    name: rook-only-client.14f52a0f18bdb9a2
+    namespace: default
+    resourceVersion: "2864"
+    selfLink: /api/v1/namespaces/default/events/rook-only-client.14f52a0f18bdb9a2
+    uid: 25ac6169-c4a4-11e7-b096-0a570863b3d2
+  reason: ScalingReplicaSet
+  source:
+    component: deployment-controller
+  type: Normal
+- apiVersion: v1
+  count: 1
+  firstTimestamp: 2017-11-08T16:48:41Z
+  involvedObject:
+    apiVersion: extensions
+    kind: Deployment
+    name: rook-only-client
+    namespace: default
+    resourceVersion: "585185"
+    uid: ad068271-c4a4-11e7-b096-0a570863b3d2
+  kind: Event
+  lastTimestamp: 2017-11-08T16:48:41Z
+  message: Scaled up replica set rook-only-client-667d7dfd44 to 1
+  metadata:
+    creationTimestamp: 2017-11-08T16:48:41Z
+    name: rook-only-client.14f52a43f8a586d4
+    namespace: default
+    resourceVersion: "2872"
+    selfLink: /api/v1/namespaces/default/events/rook-only-client.14f52a43f8a586d4
+    uid: ad086020-c4a4-11e7-b096-0a570863b3d2
+  reason: ScalingReplicaSet
+  source:
+    component: deployment-controller
+  type: Normal
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

@@ -1,0 +1,29 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: ebs-only-client
+  labels:
+    app: eval
+spec:
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: eval
+    spec:
+      containers:
+      - image: ubuntu
+        name: rookeval
+        command: [ "/bin/bash", "-c", "--" ]
+        args: [ "while true; do sleep 1; done;" ]
+        volumeMounts:
+        - name: eval-ebs-io1
+          mountPath: /eval-io1
+      volumes:
+      - name: eval-ebs-io1
+        awsElasticBlockStore:
+          volumeID: vol-037b665e14ab0d110
+          fsType: ext4
+
+

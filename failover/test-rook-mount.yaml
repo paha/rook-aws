@@ -1,0 +1,26 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: rook-only-client
+  labels:
+    app: eval
+spec:
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: eval
+    spec:
+      containers:
+      - image: ubuntu
+        name: rookeval
+        command: [ "/bin/bash", "-c", "--" ]
+        args: [ "while true; do sleep 1; done;" ]
+        volumeMounts:
+        - name: eval-block-storage
+          mountPath: /eval
+      volumes:
+      - name: eval-block-storage
+        persistentVolumeClaim:
+          claimName: rookeval-claim
