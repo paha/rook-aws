@@ -10,11 +10,11 @@ metadata:
   namespace: rook
 spec:
   versionTag: master
-  dataDirHostPath: "/var/lib/docker/rook-eval"
+  dataDirHostPath: /var/lib/rook
   hostNetwork: false
   storage:
-    useAllNodes: true
-    useAllDevices: false
+    useAllNodes: false
+    useAllDevices: true
     deviceFilter: nvm
     metadataDevice:
     location:
@@ -22,3 +22,6 @@ spec:
       storeType: bluestore
       databaseSizeMB: 1024
       journalSizeMB: 1024
+    nodes:
+    - name: ip-172-20-59-17.us-west-2.compute.internal 
+    - name: ip-172-20-60-156.us-west-2.compute.internal

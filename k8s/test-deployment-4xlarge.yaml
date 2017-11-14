@@ -1,0 +1,40 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: rookeval
+  labels:
+    app: eval
+spec:
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: eval
+    spec:
+      containers:
+      - image: ubuntu
+        name: rookeval
+        command: [ "/bin/bash", "-c", "--" ]
+        args: [ "while true; do sleep 30; done;" ]
+        volumeMounts:
+        - name: eval-block-storage
+          mountPath: /eval
+        - name: eval-ebs-gp2
+          mountPath: /eval-gp2
+        - name: eval-ebs-io1
+          mountPath: /eval-io1
+      volumes:
+      - name: eval-block-storage
+        persistentVolumeClaim:
+          claimName: rookeval-claim
+      - name: eval-ebs-gp2
+        awsElasticBlockStore:
+          volumeID: vol-0e9978f7c61ba81e0
+          fsType: ext4
+      - name: eval-ebs-io1
+        awsElasticBlockStore:
+          volumeID: vol-024c27ad9716507ff
+          fsType: ext4
+      nodeSelector:
+        type: osd
