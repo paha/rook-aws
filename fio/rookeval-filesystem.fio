@@ -1,19 +1,20 @@
+cat >> rookeval-filesystem.fio << EOF
 # Rook vol vs. EBS gp2 vs. EBS io1 6k iops
 # 120 GiB ext4 with default mount options
 # Block sizes: 4k, 16k, 128k, 1024k
 # IO size 20 GiB
 
 # Example:
-# $ export TESTDIR=/eval && fio rookeval-filesystem.fio --output-format=json --output=results.json
+# $ fio rookeval-filesystem.fio --output-format=json --output=results.json
 
 [global]
 ioengine=libaio
-iodepth=4
+iodepth=32
 direct=1
 runtime=60
 invalidate=1
-size=20g
-directory=${TESTDIR}
+size=10g
+directory=/eval
 filename=fio-test.file
 
 ###
@@ -107,3 +108,5 @@ stonewall
 bs=1024k
 rw=randwrite
 stonewall
+
+EOF

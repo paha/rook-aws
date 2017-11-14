@@ -30,9 +30,11 @@ spec:
           claimName: rookeval-claim
       - name: eval-ebs-gp2
         awsElasticBlockStore:
-          volumeID: vol-091b7b077a531edf5
+          volumeID: vol-082d2db27d0d95325
           fsType: ext4
       - name: eval-ebs-io1
         awsElasticBlockStore:
-          volumeID: vol-0b8645275e38e2b14
+          volumeID: vol-052e9210e04298bf6
           fsType: ext4
+      nodeSelector:
+        type: osd
